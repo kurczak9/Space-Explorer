@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=ScoreCounter
+comment0.text=\r\n\ Counts\ the\ points.\r\n\ \r\n\ @author\ github.com/kurczak9\r\n\ @version\ 0.0.1\r\n
+comment1.params=
+comment1.target=void\ act()
+numComments=2

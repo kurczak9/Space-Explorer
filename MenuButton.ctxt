@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=MenuButton
+comment0.text=\r\n\ Gets\ the\ player\ back\ to\ menu.\r\n\ \r\n\ @author\ github.com/kurczak9\r\n\ @version\ 0.0.1\r\n
+comment1.params=
+comment1.target=void\ act()
+numComments=2

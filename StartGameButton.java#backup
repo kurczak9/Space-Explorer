@@ -1,0 +1,23 @@
+import greenfoot.*;  
+
+/**
+ * Starts the game.
+ * 
+ * @author kurczak9
+ * @version 1.0.0
+ */
+public class StartGameButton extends MenuObjects
+{    
+    public static int diff = 6;
+    
+    public void act() 
+    {        
+        if(Greenfoot.mouseClicked(this))
+        {
+            Greenfoot.setWorld(new Space());
+            
+            Enemy.difficulty = diff;
+            Target.barrel = 5;
+        }  
+    }
+}

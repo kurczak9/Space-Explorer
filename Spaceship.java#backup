@@ -1,0 +1,71 @@
+import greenfoot.*;
+
+/**
+ * The rocket, game hero.
+ * 
+ * @author kurczak9
+ * @version 1.0.0
+ */
+public class Spaceship extends GamePlay
+{
+        public void act() 
+        {
+            if(Space.pause)
+            {
+            World world = this.getWorld();      
+
+            int x = this.getX();
+            int y = this.getY();  
+       
+            if(Greenfoot.isKeyDown("up"))  
+            {
+                y-=3;
+            }
+        
+            if(Greenfoot.isKeyDown("down")) 
+            {
+                y+=3;
+            }
+        
+            this.setLocation(x, y); 
+            
+            boolean spaceDown = true;
+            
+            if(Greenfoot.getKey()=="space") 
+            {
+                spaceDown = false;
+            }
+            if(!spaceDown && Greenfoot.isKeyDown("space"))
+            {
+                spaceDown = true;
+                
+                Bullet bullet = new Bullet();
+                world.addObject(bullet, x, y);
+            }
+            if(spaceDown && !Greenfoot.isKeyDown("space"))
+            {
+                spaceDown = false;
+            }  //makes missiles appear
+        
+            if(this.isTouching(Enemy.class))
+            {
+                x = this.getX();
+                y = this.getY();
+            
+                world.removeObject(this); 
+                
+                DeadShipIcon deadship = new DeadShipIcon();
+                world.addObject(deadship, x, y);
+                
+                ToMenuButton menubutton = new ToMenuButton();
+                world.addObject(menubutton, 350, 250);
+                
+                GameOverText gameovertext = new GameOverText();
+                world.addObject(gameovertext, 350, 160);
+                
+                Enemy.difficulty = 1;
+                Target.barrel = 1;
+            }
+        }
+    }
+}
